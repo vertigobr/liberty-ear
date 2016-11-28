@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>br.gov.bcb.exemplos.liberty</groupId>
+    <artifactId>modulos</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>ear</artifactId>
+  <packaging>ear</packaging>
+  <name>exemplos.liberty.ear</name>
+  <description>Exemplo Liberty - modulo EAR</description>
+  <properties>
+    <diretorio.do.ear>${project.build.directory}</diretorio.do.ear>
+  </properties>
+  <dependencies>
+    <!-- Dependências internas -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>web</artifactId>
+      <version>${project.version}</version>
+      <type>war</type>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-ear-plugin</artifactId>
+        <version>${maven-ear-plugin.version}</version>
+        <configuration>
+          <outputDirectory>${diretorio.do.ear}</outputDirectory>
+          <generateApplicationXml>true</generateApplicationXml>
+          <version>7</version>
+          <displayName>exemplo-liberty</displayName>
+          <finalName>exemplo-liberty</finalName>
+          <modules>
+            <webModule>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>web</artifactId>
+              <bundleFileName>liberty.war</bundleFileName>
+              <contextRoot>/liberty</contextRoot>
+            </webModule>
+          </modules>
+          <security>
+            <security-role>
+              <description>FUNCI</description>
+              <role-name>FUNCI</role-name>
+            </security-role>
+          </security>
+          <defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+          <skinnyWars>true</skinnyWars>
+        </configuration>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
