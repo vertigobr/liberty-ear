@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Linha de comando "mvn" para quem n�o tem Java instalado.
-# Quem tem Docker n�o tem medo.
+# Linha de comando "mvn" para quem não tem Java instalado.
+# Quem tem Docker não tem medo.
 #
 docker run --rm -ti \
   -p 9080:9080 \
