@@ -24,9 +24,6 @@
     </group>
   </basicRegistry>
 
-  <application location="${wlp.install.dir}/../../exemplo-liberty.ear">
-  </application>
+  <application location="${server.config.dir}/exemplo-liberty.ear" />
 
-  <applicationMonitor updateTrigger="polled" pollingRate="500ms" />
-  <config updateTrigger="polled" monitorInterval="500ms" />
 </server>

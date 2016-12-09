@@ -56,6 +56,12 @@
                     <artifactId>liberty-maven-plugin</artifactId>
                     <version>1.2.1</version>
                 </plugin>
+                <!-- Enable docker-maven-plugin -->
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>0.4.13</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
