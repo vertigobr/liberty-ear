@@ -7,4 +7,4 @@ docker run --rm -ti \
   -w /opt/app/ear \
   -e TERM=xterm \
   -v $HOME/.m2:/root/.m2 \
-  bacen/maven-ibmjava mvn liberty:run-server
+  maven:3-ibmjava-8 mvn liberty:run-server
