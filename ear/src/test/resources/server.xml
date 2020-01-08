@@ -2,7 +2,7 @@
 
   <!-- 
     Enable features 
-    O WLP apenas fornece o que se pede aqui da spec JEE.
+    O WLP apenas fornece as APIs JEE que são aqui enumeradas.
     https://www-01.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html
   -->
   <featureManager>
@@ -18,7 +18,7 @@
     <!-- <user name="yourUserName" password="" />  -->
     <user name="teste" password="senha"/>
     <user name="juca" password="senha"/>
-    <group name="FUNCI">
+    <group name="RESTRITO">
       <member name="teste"/>
       <member name="juca"/>
     </group>

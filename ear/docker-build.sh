@@ -7,5 +7,5 @@ docker run --rm -ti \
   -w /opt/app/ear \
   -e TERM=xterm \
   -v $HOME/.m2:/root/.m2 \
-  maven:3-ibmjava-8 mvn liberty:run-server
-
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  vertigo/maven-ibmjava mvn docker:build

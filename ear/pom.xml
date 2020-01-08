@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>br.gov.bcb.exemplos.liberty</groupId>
+    <groupId>exemplos.liberty</groupId>
     <artifactId>modulos</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
@@ -45,12 +45,27 @@
           </modules>
           <security>
             <security-role>
-              <description>FUNCI</description>
-              <role-name>FUNCI</role-name>
+              <description>ACESSO RESTRITO</description>
+              <role-name>RESTRITO</role-name>
             </security-role>
           </security>
           <defaultJavaBundleDir>lib/</defaultJavaBundleDir>
           <skinnyWars>true</skinnyWars>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <configuration>
+          <imageName>vertigo/liberty-ear</imageName>
+          <dockerDirectory>src/main/docker</dockerDirectory>
+          <resources>
+             <resource>
+               <targetPath>/</targetPath>
+               <directory>${diretorio.do.ear}</directory>
+               <include>*.ear</include>
+             </resource>
+          </resources>
         </configuration>
       </plugin>
     </plugins>
