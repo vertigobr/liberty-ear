@@ -18,7 +18,7 @@
     <!-- <user name="yourUserName" password="" />  -->
     <user name="teste" password="senha"/>
     <user name="juca" password="senha"/>
-    <group name="RESTRITO">
+    <group name="FUNCI">
       <member name="teste"/>
       <member name="juca"/>
     </group>
